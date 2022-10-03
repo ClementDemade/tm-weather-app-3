@@ -1,5 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:weather_app_3/models/weather_current.dart';
+import 'package:weather_app_3/models/weather_daily.dart';
 
 part 'weather_data.g.dart';
 
@@ -8,13 +8,12 @@ class WeatherData {
   final double latitude;
   final double longitude;
 
-  @JsonKey(name: 'current_weather')
-  final WeatherCurrent currentWeather;
+  final WeatherDaily daily;
 
   WeatherData({
     required this.latitude,
     required this.longitude,
-    required this.currentWeather,
+    required this.daily,
   });
 
   factory WeatherData.fromJson(Map<String, dynamic> json) =>

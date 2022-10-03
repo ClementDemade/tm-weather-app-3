@@ -8,13 +8,13 @@ import 'package:weather_app_3/models/weather_data.dart';
 part 'weather_state.dart';
 
 class WeatherCubit extends Cubit<WeatherState> {
-  WeatherCubit() : super(WeatherInitial());
+  WeatherCubit() : super(WeatherInitialState());
 
   refresh({
     double latitude = 52.52,
     double longitude = 13.41,
   }) async {
-    emit(WeatherLoading());
+    emit(WeatherLoadingState());
 
     await Future.delayed(const Duration(seconds: 2));
 
@@ -38,7 +38,7 @@ class WeatherCubit extends Cubit<WeatherState> {
     );
 
     WeatherData weatherData = WeatherData.fromJson(response.data);
-    emit(WeatherLoaded(weatherData: weatherData));
+    emit(WeatherLoadedState(weatherData: weatherData));
   }
 
   @override

@@ -41,6 +41,7 @@ dependencies:
   flutter_bloc:
   meta: 
   intl:
+  equatable: 
 
 dev_dependencies:
   flutter_test:
